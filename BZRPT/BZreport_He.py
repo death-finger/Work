@@ -5,7 +5,7 @@ date_2 = '2017-10-31 23:59:59'
 print("时间段： %s - %s" % (date_1, date_2))
 
 result = open('result.txt', 'w')
-cnx = mysql.connector.connect(user='joshua', password='bagakira', host='192.168.16.10', database='BZRPT')
+cnx = mysql.connector.connect(user='joshua', password='bagakira', host='192.168.16.10', database='HERPT')
 cursor = cnx.cursor()
 
 

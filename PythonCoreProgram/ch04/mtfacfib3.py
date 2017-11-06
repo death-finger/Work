@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from myThread import MyThread
+from myThread3 import MyThread
 from time import ctime, sleep
 
 def fib(x):
@@ -24,15 +24,15 @@ n = 12
 def main():
     nfuncs = range(len(funcs))
 
-    print '*** SINGLE THREAD'
+    print('*** SINGLE THREAD')
     for i in nfuncs:
-        print 'starting', funcs[i].__name__, \
-	    'at:', ctime()
-        print funcs[i](n)
-        print funcs[i].__name__, 'finished at:', \
-	    ctime()
+        print( 'starting', funcs[i].__name__,
+	    'at:', ctime())
+        print( funcs[i](n))
+        print( funcs[i].__name__, 'finished at:',
+	    ctime())
 
-    print '\n*** MULTIPLE THREADS'
+    print('\n*** MULTIPLE THREADS')
     threads = []
     for i in nfuncs:
         t = MyThread(funcs[i], (n,),
@@ -44,9 +44,9 @@ def main():
 
     for i in nfuncs:
         threads[i].join()
-        print threads[i].getResult()
+        print(threads[i].getResult())
 
-    print 'all DONE'
+    print( 'all DONE')
 
 if __name__ == '__main__':
     main()
